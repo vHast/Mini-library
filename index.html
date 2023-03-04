@@ -17,14 +17,15 @@
   </nav>
   <section id="main">
     <button id ="first-btn" onclick="showButton()">+ Add new book</button>
-    <form onsubmit="testNames()" method="get" id="main-form">
+    <form  method="get" id="main-form">
       <label for="fname">Title: </label>
       <input type="text" id="bookName" name="fname" required><br><br>
       <label for="lname">Author: </label>
       <input type="text" id="bookAuthor" name="lname" required><br><br>
       <label for="lname">Year: </label>
-      <input type="text" id="bookYear" name="lname" required><br><br>
-      <input type="submit" id="submit-btn"  value="+ Add">
+      <input type="text" id="bookYear" name="yname" required><br><br>
+      <input type="button" id="submit-btn"  value="+ Add" onclick="addBook(this.form)">
+       
     </form> 
   </section>
 
