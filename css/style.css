@@ -59,6 +59,22 @@ form #submit-btn {
   font-size: 1.5rem;
 }
 
+#booksList {
+  border-top: white dotted;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#booksList ul {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: white;
+  list-style: none;
+  border-radius: 5px;
+}
+
 nav {
   margin: 1rem;
 }

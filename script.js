@@ -23,20 +23,31 @@ let myLibrary = []
 
 const addBook = (form) => {
   
+  // We get all the values from the interested inputs
   let name = form.fname.value;
   let author = form.lname.value;
   let year = form.yname.value;
-  
+
+  // We create a function to create an object with those values
   let newBook = {
     nameBook : name,
     authorBook : author,
     yearBook : year
   }
 
-  myLibrary.push(newBook)
+  // We push the object to the array
+  myLibrary.push(newBook);
+
+  // Now we should create the new elements under booksList which would be a li
+
+  let elementOne = document.createTextNode(`${name}`);
+  let elementTwo = document.createTextNode(`${author}`);
+  let elementThree = document.createTextNode(`${year}`);
+
+  // We reset the form
   form.reset();
+
   console.log(myLibrary);
 
   // This function will return the value of each input fields that have been put
-
 };
