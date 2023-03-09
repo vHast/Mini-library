@@ -67,7 +67,7 @@ form #submit-btn {
   justify-content: space-around;
 }
 
-#booksList ul {
+#booksList .main-book {
   padding: 1rem;
   margin: 1rem;
   background-color: white;

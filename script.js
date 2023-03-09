@@ -17,7 +17,7 @@ const testNames = () => {
 // Need to store all book names inside the myLibrary array
 
 let myLibrary = []
-
+let idCounter = 0;
 
 // Function to add the books, should be added to a button or 
 
@@ -38,15 +38,38 @@ const addBook = (form) => {
   // We push the object to the array
   myLibrary.push(newBook);
 
-  // Now we should create the new elements under booksList which would be a li
+  // Now we should create the new elements under booksList which would be a div
 
-  let elementOne = document.createTextNode(`${name}`);
-  let elementTwo = document.createTextNode(`${author}`);
-  let elementThree = document.createTextNode(`${year}`);
+  let newPhysicalBook = document.createElement("div");
+  newPhysicalBook.setAttribute("id", idCounter)
+  newPhysicalBook.classList.add("main-book");
+  document.getElementById("booksList").appendChild(newPhysicalBook);
 
+  // Now we add the different elements for the book
+
+  let newPhysicalBookName  = document.createElement("p");
+
+  let nodeName = document.createTextNode(name);
+  newPhysicalBookName.appendChild(nodeName);
+
+  let newPhysicalBookAuthor = document.createElement("p");
+
+  let nodeAuthor = document.createTextNode(author);
+  newPhysicalBookAuthor.appendChild(nodeAuthor);
+
+  let newPhysicalBookYear = document.createElement("p");
+
+  let nodeYear = document.createTextNode(year);
+  newPhysicalBookYear.appendChild(nodeYear);
+
+
+  document.getElementById(idCounter).appendChild(newPhysicalBookName);
+  document.getElementById(idCounter).appendChild(newPhysicalBookAuthor);
+  document.getElementById(idCounter).appendChild(newPhysicalBookYear);
+  
   // We reset the form
+  idCounter++;
   form.reset();
-
   console.log(myLibrary);
 
   // This function will return the value of each input fields that have been put
