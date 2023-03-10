@@ -47,30 +47,48 @@ const addBook = (form) => {
 
   // Now we add the different elements for the book
 
+  // **Addition of the book NAME
   let newPhysicalBookName  = document.createElement("p");
 
   let nodeName = document.createTextNode(name);
   newPhysicalBookName.appendChild(nodeName);
 
+  // **Addition of the book AUTHOR
   let newPhysicalBookAuthor = document.createElement("p");
 
   let nodeAuthor = document.createTextNode(author);
   newPhysicalBookAuthor.appendChild(nodeAuthor);
 
+  // ** Addition of the book YEAR
   let newPhysicalBookYear = document.createElement("p");
 
   let nodeYear = document.createTextNode(year);
   newPhysicalBookYear.appendChild(nodeYear);
 
+  // ** Addition of the BOOK REMOVAL BUTTON
+  let newButton = document.createElement("button");
+
+  newButton.innerHTML = "Remove";
+  newButton.classList.add("removal-button");
+  newButton.setAttribute("onClick", removeBook()) // Wont work if there is no function defined
+
 
   document.getElementById(idCounter).appendChild(newPhysicalBookName);
   document.getElementById(idCounter).appendChild(newPhysicalBookAuthor);
   document.getElementById(idCounter).appendChild(newPhysicalBookYear);
+  document.getElementById(idCounter).appendChild(newButton)
   
-  // We reset the form
-  idCounter++;
+  // Form values reset
   form.reset();
-  console.log(myLibrary);
+
+  // We increase the value of idCounter in order to set a unique ID for the next book
+  idCounter++;
 
   // This function will return the value of each input fields that have been put
 };
+
+// Book removal functionality
+
+const removeBook = () => {
+  console.log(document.getElementById(idCounter));
+}

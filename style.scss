@@ -60,6 +60,11 @@ form {
   }
 }
 
+.removal-button {
+  margin: 1rem 0rem 0rem 0rem;
+  background-color: red;
+  color: white;
+}
 #booksList {
 
   border-top: white dotted;
@@ -70,6 +75,10 @@ form {
   justify-content: space-around;
 
   .main-book {
+    display: flex;
+    align-items: center;
+    justify-items: left;
+    flex-direction: column;
     padding: 1rem;
     margin: 1rem;
     background-color: rgb(255, 255, 255);

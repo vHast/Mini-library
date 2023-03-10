@@ -59,6 +59,12 @@ form #submit-btn {
   font-size: 1.5rem;
 }
 
+.removal-button {
+  margin: 1rem 0rem 0rem 0rem;
+  background-color: red;
+  color: white;
+}
+
 #booksList {
   border-top: white dotted;
   display: flex;
@@ -68,6 +74,10 @@ form #submit-btn {
 }
 
 #booksList .main-book {
+  display: flex;
+  align-items: center;
+  justify-items: left;
+  flex-direction: column;
   padding: 1rem;
   margin: 1rem;
   background-color: white;
