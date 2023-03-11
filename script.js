@@ -89,6 +89,10 @@ const addBook = (form) => {
 
 // Book removal functionality
 
+const list = document.getElementById("booksList")
+
 const removeBook = () => {
-  console.log(document.getElementById(idCounter));
+  if (list.hasChildNodes()) {
+    list.removeChild(list.children(idCounter));
+  };
 }
