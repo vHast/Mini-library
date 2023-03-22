@@ -82,7 +82,7 @@ const addBook = (form) => {
   form.reset();
 
   // We increase the value of idCounter in order to set a unique ID for the next book
-  idCounter++;
+  idCounter++; // * We could also set the attribute for the ID for each newPhysicalBook element with setting the element attrbitue
 
   // This function will return the value of each input fields that have been put
 };
