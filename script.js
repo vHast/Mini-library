@@ -38,9 +38,53 @@ const addBook = (form) => {
   // We push the object to the array
   myLibrary.push(newBook);
 
+  console.log(myLibrary.length > 0);
+
+
+  for (let i = 1; myLibrary.length >= i; i++) {
+    
+    // Creation of the div element
+    let newBookArray = document.createElement("div");
+    newBookArray.setAttribute("id", i);
+    newBookArray.classList.add("main-book");
+    document.getElementById("booksList").appendChild(newBookArray);
+
+    // Adding different elements for the book
+    let targetBook = myLibrary[idCounter]; //Defining the object which we want to take the data from
+    console.log(targetBook);
+
+    // * Book name
+    let newBookName = document.createElement("p");
+    let nodeNewBook = document.createTextNode(targetBook.nameBook);
+    newBookName.appendChild(nodeNewBook);
+
+    // * Book author
+    let newBookAuthor = document.createElement("p");
+    let nodeNewBookAuthor = document.createTextNode(targetBook.authorBook);
+    newBookAuthor.appendChild(nodeNewBookAuthor);
+
+    // * Book year
+    let newBookYear = document.createElement("p");
+    let nodeNewBookYear = document.createTextNode(targetBook.yearBook)
+    newBookYear.appendChild(nodeNewBookYear);
+
+    // * Removal button
+    let removalButton = document.createElement("button");
+
+    removalButton.innerHTML = "Remove";
+    removalButton.classList.add("removal-button");
+    // removalButton.setAttribute("onClick", removeBook()) // Wont work if there is no function defined
+
+    document.getElementById(i).appendChild(newBookName);
+    document.getElementById(i).appendChild(newBookAuthor);
+    document.getElementById(i).appendChild(newBookYear);
+    document.getElementById(i).appendChild(removalButton);
+
+  }
+
   // Now we should create the new elements under booksList which would be a div
 
-  let newPhysicalBook = document.createElement("div");
+  /* let newPhysicalBook = document.createElement("div");
   newPhysicalBook.setAttribute("id", idCounter)
   newPhysicalBook.classList.add("main-book");
   document.getElementById("booksList").appendChild(newPhysicalBook);
@@ -77,7 +121,8 @@ const addBook = (form) => {
   document.getElementById(idCounter).appendChild(newPhysicalBookAuthor);
   document.getElementById(idCounter).appendChild(newPhysicalBookYear);
   document.getElementById(idCounter).appendChild(newButton)
-  
+  */
+
   // Form values reset
   form.reset();
 
@@ -87,12 +132,12 @@ const addBook = (form) => {
   // This function will return the value of each input fields that have been put
 };
 
-// Book removal functionality
+// * Book removal functionality1 (WILL ADD LATER )
 
-const list = document.getElementById("booksList")
+/* const list = document.getElementById("booksList")
 
 const removeBook = () => {
   if (list.hasChildNodes()) {
     list.removeChild(list.children(idCounter));
   };
-}
+} */
