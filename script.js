@@ -30,27 +30,30 @@ const addBook = (form) => {
 
   // We create a function to create an object with those values
   let newBook = {
+    idBook : idCounter,
     nameBook : name,
     authorBook : author,
     yearBook : year
   }
 
-  // We push the object to the array
   myLibrary.push(newBook);
 
-  console.log(myLibrary.length > 0);
+  for (let i = 0; i < myLibrary.length; i++) {
 
+    // We push the object to the array
 
-  for (let i = 1; myLibrary.length >= i; i++) {
-    
+    // * THERE IS A HUGE PROBLEM WITH THE COUNTER
+
+    if(myLibrary[idCounter] != undefined) {
+
     // Creation of the div element
     let newBookArray = document.createElement("div");
-    newBookArray.setAttribute("id", i);
+    newBookArray.setAttribute("id", idCounter);
     newBookArray.classList.add("main-book");
     document.getElementById("booksList").appendChild(newBookArray);
 
     // Adding different elements for the book
-    let targetBook = myLibrary[idCounter]; //Defining the object which we want to take the data from
+    let targetBook = myLibrary[idCounter]; // Defining the object which we want to take the data from
     console.log(targetBook);
 
     // * Book name
@@ -65,7 +68,7 @@ const addBook = (form) => {
 
     // * Book year
     let newBookYear = document.createElement("p");
-    let nodeNewBookYear = document.createTextNode(targetBook.yearBook)
+    let nodeNewBookYear = document.createTextNode(targetBook.yearBook);
     newBookYear.appendChild(nodeNewBookYear);
 
     // * Removal button
@@ -75,69 +78,27 @@ const addBook = (form) => {
     removalButton.classList.add("removal-button");
     // removalButton.setAttribute("onClick", removeBook()) // Wont work if there is no function defined
 
-    document.getElementById(i).appendChild(newBookName);
-    document.getElementById(i).appendChild(newBookAuthor);
-    document.getElementById(i).appendChild(newBookYear);
-    document.getElementById(i).appendChild(removalButton);
+    document.getElementById(idCounter).appendChild(newBookName);
+    document.getElementById(idCounter).appendChild(newBookAuthor);
+    document.getElementById(idCounter).appendChild(newBookYear);
+    document.getElementById(idCounter).appendChild(removalButton);
 
+    // We increase the value of idCounter in order to set a unique ID for the next book
+    idCounter++; // * We could also set the attribute for the ID for each newPhysicalBook element with setting the element attribute
+
+    }
   }
-
-  // Now we should create the new elements under booksList which would be a div
-
-  /* let newPhysicalBook = document.createElement("div");
-  newPhysicalBook.setAttribute("id", idCounter)
-  newPhysicalBook.classList.add("main-book");
-  document.getElementById("booksList").appendChild(newPhysicalBook);
-
-  // Now we add the different elements for the book
-
-  // **Addition of the book NAME
-  let newPhysicalBookName  = document.createElement("p");
-
-  let nodeName = document.createTextNode(name);
-  newPhysicalBookName.appendChild(nodeName);
-
-  // **Addition of the book AUTHOR
-  let newPhysicalBookAuthor = document.createElement("p");
-
-  let nodeAuthor = document.createTextNode(author);
-  newPhysicalBookAuthor.appendChild(nodeAuthor);
-
-  // ** Addition of the book YEAR
-  let newPhysicalBookYear = document.createElement("p");
-
-  let nodeYear = document.createTextNode(year);
-  newPhysicalBookYear.appendChild(nodeYear);
-
-  // ** Addition of the BOOK REMOVAL BUTTON
-  let newButton = document.createElement("button");
-
-  newButton.innerHTML = "Remove";
-  newButton.classList.add("removal-button");
-  newButton.setAttribute("onClick", removeBook()) // Wont work if there is no function defined
-
-
-  document.getElementById(idCounter).appendChild(newPhysicalBookName);
-  document.getElementById(idCounter).appendChild(newPhysicalBookAuthor);
-  document.getElementById(idCounter).appendChild(newPhysicalBookYear);
-  document.getElementById(idCounter).appendChild(newButton)
-  */
 
   // Form values reset
   form.reset();
-
-  // We increase the value of idCounter in order to set a unique ID for the next book
-  idCounter++; // * We could also set the attribute for the ID for each newPhysicalBook element with setting the element attrbitue
-
   // This function will return the value of each input fields that have been put
+
 };
 
-// * Book removal functionality1 (WILL ADD LATER )
+// * Book removal functionality1 (WILL ADD LATER), the idea is for a FOR loop that iterates the array and removes the book and removes the HTML element with the ID of said element 
 
-/* const list = document.getElementById("booksList")
+ const list = document.getElementById("booksList")
 
-const removeBook = () => {
-  if (list.hasChildNodes()) {
-    list.removeChild(list.children(idCounter));
-  };
-} */
+/* const removeBook = () => {
+  let targetRemove = document.getElementById(this.node)
+  }; */
