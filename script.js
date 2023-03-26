@@ -36,13 +36,10 @@ const addBook = (form) => {
     yearBook : year
   }
 
+  // We push the object to the array
   myLibrary.push(newBook);
 
   for (let i = 0; i < myLibrary.length; i++) {
-
-    // We push the object to the array
-
-    // * THERE IS A HUGE PROBLEM WITH THE COUNTER
 
     if(myLibrary[idCounter] != undefined) {
 
@@ -76,6 +73,8 @@ const addBook = (form) => {
 
     removalButton.innerHTML = "Remove";
     removalButton.classList.add("removal-button");
+    removalButton.setAttribute("onclick", removeBook(idCounter));
+
     // removalButton.setAttribute("onClick", removeBook()) // Wont work if there is no function defined
 
     document.getElementById(idCounter).appendChild(newBookName);
@@ -91,14 +90,18 @@ const addBook = (form) => {
 
   // Form values reset
   form.reset();
+
   // This function will return the value of each input fields that have been put
 
 };
 
 // * Book removal functionality1 (WILL ADD LATER), the idea is for a FOR loop that iterates the array and removes the book and removes the HTML element with the ID of said element 
 
- const list = document.getElementById("booksList")
+ const list = document.getElementById("booksList");
 
-/* const removeBook = () => {
-  let targetRemove = document.getElementById(this.node)
-  }; */
+ const removeBook = (id) => {
+  targetRemoval = document.getElementById(id);
+  console.log(targetRemoval);
+  console.log(list.childNodes);
+  // list.removeChild(targetRemoval);
+  };
