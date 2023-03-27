@@ -102,6 +102,7 @@ const addBook = (form) => {
  const removeBook = (id) => {
   targetRemoval = document.getElementById(id);
   console.log(targetRemoval);
-  console.log(list.childNodes);
+  list.removeChild(targetRemoval);
+
   // list.removeChild(targetRemoval);
   };
