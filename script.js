@@ -16,7 +16,7 @@ const testNames = () => {
 
 // Need to store all book names inside the myLibrary array
 
-let myLibrary = []
+let myLibrary = [];
 let idCounter = 0;
 
 // Function to add the books, should be added to a button or 
@@ -95,14 +95,18 @@ const addBook = (form) => {
 
 };
 
-// * Book removal functionality1 (WILL ADD LATER), the idea is for a FOR loop that iterates the array and removes the book and removes the HTML element with the ID of said element 
+// * Book removal functionality (WILL ADD LATER), the idea is for a FOR loop that iterates the array and removes the book and removes the HTML element with the ID of said element 
 
  const list = document.getElementById("booksList");
 
  const removeBook = (id) => {
   targetRemoval = document.getElementById(id);
   console.log(targetRemoval);
-  list.removeChild(targetRemoval);
+  myLibrary.slice(id);
+  console.log(myLibrary);
+  // list.removeChild(targetRemoval);
+  idCounter--;
+
 
   // list.removeChild(targetRemoval);
   };
