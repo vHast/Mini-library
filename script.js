@@ -97,16 +97,10 @@ const addBook = (form) => {
 
 // * Book removal functionality (WILL ADD LATER), the idea is for a FOR loop that iterates the array and removes the book and removes the HTML element with the ID of said element 
 
- const list = document.getElementById("booksList");
+ const list = document.querySelector("#booksList");
+ console.log(list);
 
  const removeBook = (id) => {
   targetRemoval = document.getElementById(id);
   console.log(targetRemoval);
-  myLibrary.slice(id);
-  console.log(myLibrary);
-  // list.removeChild(targetRemoval);
-  idCounter--;
-
-
-  // list.removeChild(targetRemoval);
   };
